@@ -130,54 +130,26 @@ The environment is organised into four layers:
 
 
 
-```text
+```mermaid
+flowchart TD
+    A[Windows Endpoints]
+    B[Ubuntu Servers]
+    C[AWS CloudTrail]
+    D[Network Traffic]
 
-Windows / Ubuntu / AWS / Network
+    A --> E[Wazuh Agents]
+    B --> E
+    C --> F[Wazuh Manager]
+    D --> G[Suricata IDS]
 
-&#x20;             |
+    E --> F
+    G --> F
 
-&#x20;             v
-
-&#x20;      Wazuh Agents
-
-&#x20;             |
-
-&#x20;             v
-
-&#x20;      Wazuh Manager
-
-&#x20;             |
-
-&#x20;     +-------+--------+
-
-&#x20;     |                |
-
-&#x20;     v                v
-
-&#x20;Wazuh Rules       Suricata IDS
-
-&#x20;     |                |
-
-&#x20;     +-------+--------+
-
-&#x20;             |
-
-&#x20;             v
-
-&#x20;         OpenSearch
-
-&#x20;             |
-
-&#x20;             v
-
-&#x20;      Wazuh Dashboard
-
-&#x20;             |
-
-&#x20;             v
-
-&#x20;    Alerts and Response
-
+    F --> H[Wazuh Rules Engine]
+    H --> I[OpenSearch]
+    I --> J[Wazuh Dashboard]
+    J --> K[Security Alerts]
+    K --> L[Incident Triage and Response]
 ```
 
 

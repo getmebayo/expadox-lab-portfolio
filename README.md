@@ -1,158 +1,168 @@
-\# 🛡️ Expadox Lab Cybersecurity Portfolio
+<div align="center">
 
+# 🛡️ Expadox Lab Cybersecurity Portfolio
 
+### Enterprise Cybersecurity Projects | Blue Team | DevSecOps | AI Security
 
-> Enterprise cybersecurity projects completed during the \*\*Expadox Lab Project-Based Mentorship Program (Cohort 2 – 2026)\*\*.
+*Practical security engineering projects completed during the **Expadox Lab Project-Based Mentorship Program (Cohort 2 – 2026).***
 
+---
 
+![Cybersecurity](https://img.shields.io/badge/Focus-Cybersecurity-blue)
+![Blue Team](https://img.shields.io/badge/Blue-Team-success)
+![DevSecOps](https://img.shields.io/badge/DevSecOps-orange)
+![Cloud Security](https://img.shields.io/badge/Cloud-AWS-yellow)
+![AI Security](https://img.shields.io/badge/AI-Cybersecurity-purple)
 
-\---
+</div>
 
+---
 
+# 👋 About Me
 
-\## 👋 About Me
+Hi, I'm **Adebayo Basorun**.
 
+I'm a cybersecurity engineer passionate about designing, securing and automating modern enterprise environments.
 
+My primary interests include:
 
-I'm \*\*Adebayo Basorun\*\*, a cybersecurity professional with interests in:
+- 🛡️ Security Operations (SecOps)
+- 🔍 Detection Engineering
+- 🎯 Threat Hunting
+- ☁️ Cloud Security
+- ⚙️ DevSecOps
+- 🤖 Artificial Intelligence for Cybersecurity
+- 🚨 Incident Response
+- 🔄 Security Automation
 
+This repository documents my technical implementations, architecture decisions, detection engineering work, and security operations projects completed throughout the Expadox Lab mentorship programme.
 
+---
 
-\- Security Operations (SecOps)
+# 🚀 Featured Projects
 
-\- Detection Engineering
+| Project | Description | Technologies | Status |
+|---------|-------------|--------------|:------:|
+| 🛰️ **FireOps Monitoring Environment** | Enterprise security monitoring using Wazuh, OpenSearch and Suricata | Wazuh • OpenSearch • Suricata • Docker | ✅ |
+| 🛡️ **FireOps Security Operations Center** | Complete SOC deployment with detection engineering and incident response | Wazuh • CrowdSec • AWS • Detection Engineering | ✅ |
+| ⚙️ **ShieldFlow** | Automated DevSecOps pipeline with integrated SOAR | GitHub Actions • Semgrep • Trivy • ZAP • Shuffle | ✅ |
+| 🤖 **SecOpsAI** | AI-powered threat detection with Explainable AI | XGBoost • SHAP • FastAPI • Detection-as-Code | 🚧 |
+| 🔐 **OpsShield** | Secure SDLC platform with cloud-native security controls | Threat Modelling • AppSec • Wazuh • Cloud Security | 🚧 |
 
-\- Threat Hunting
+---
 
-\- DevSecOps
+# 🛠️ Skills Demonstrated
 
-\- Cloud Security
+## Security Operations
 
-\- Artificial Intelligence for Cybersecurity
+- Wazuh SIEM
+- Security Monitoring
+- Detection Engineering
+- Incident Response
+- Threat Hunting
 
-\- Incident Response
+## Application Security
 
-\- Security Automation
+- Semgrep
+- OWASP ZAP
+- Gitleaks
+- Trivy
+- Secure SDLC
 
+## Cloud Security
 
+- AWS
+- OpenSearch
+- Docker
+- Linux Administration
 
-This repository documents my practical implementations throughout the Expadox Lab mentorship programme.
+## AI for Cybersecurity
 
+- XGBoost
+- SHAP Explainable AI
+- FastAPI
+- Detection-as-Code
+- Adversarial Machine Learning
 
+---
 
-\---
+# 🗂️ Repository Structure
 
-
-
-\# 📂 Projects
-
-
-
-| Project | Focus Area | Status |
-
-|----------|------------|--------|
-
-| FireOps Monitoring Environment | SIEM • Monitoring • Incident Response | ✅ |
-
-| FireOps Security Operations Center | SOC Engineering • Detection Engineering | ✅ |
-
-| ShieldFlow | DevSecOps • AppSec • SOAR | ✅ |
-
-| SecOpsAI | AI Security • Explainable AI • Detection-as-Code | 🚧 |
-
-| OpsShield | Secure SDLC • Threat Modelling • Cloud Security | 🚧 |
-
-
-
-\---
-
-
-
-\# 🛠 Skills Demonstrated
-
-
-
-\- Security Architecture
-
-\- Threat Modelling (STRIDE)
-
-\- Detection Engineering
-
-\- Wazuh SIEM
-
-\- Suricata IDS
-
-\- CrowdSec
-
-\- DevSecOps
-
-\- GitHub Actions
-
-\- Semgrep
-
-\- Gitleaks
-
-\- Trivy
-
-\- OWASP ZAP
-
-\- Shuffle SOAR
-
-\- FastAPI
-
-\- XGBoost
-
-\- Explainable AI (SHAP)
-
-\- MITRE ATT\&CK
-
-\- Incident Response
-
-\- Secure API Development
-
-
-
-\---
-
-
-
-\# 📁 Repository Structure
-
-
-
+```text
+expadox-lab-portfolio
+│
+├── 01-fireops-monitoring-environment/
+├── 02-fireops-security-operations-center/
+├── 03-shieldflow/
+├── 04-secopsai/
+├── 05-opsshield/
+│
+├── docs/
+├── shared/
+├── shared-assets/
+└── shared-templates/
 ```
 
-01-fireops-monitoring-environment/
+---
 
-02-fireops-security-operations-center/
+# 📚 Technologies
 
-03-shieldflow/
+| Category | Technologies |
+|-----------|--------------|
+| SIEM | Wazuh |
+| IDS | Suricata |
+| Cloud | AWS |
+| DevSecOps | GitHub Actions |
+| SAST | Semgrep |
+| SCA | Trivy |
+| Secrets Detection | Gitleaks |
+| DAST | OWASP ZAP |
+| SOAR | Shuffle |
+| AI | XGBoost, SHAP |
+| APIs | FastAPI |
 
-04-secopsai/
+---
 
-05-opsshield/
+# 🎯 Learning Objectives
 
-```
+This portfolio demonstrates practical implementation of:
 
+- Enterprise Security Architecture
+- Detection Engineering
+- DevSecOps
+- Cloud Security
+- Security Automation
+- Artificial Intelligence for Cybersecurity
+- Threat Modelling
+- Incident Response
+- SOC Engineering
 
+---
 
-\---
+# 📈 Current Progress
 
+| Project | Progress |
+|----------|:--------:|
+| FireOps Monitoring Environment | ✅ Complete |
+| FireOps SOC | ✅ Complete |
+| ShieldFlow | ✅ Complete |
+| SecOpsAI | 🚧 In Progress |
+| OpsShield | 🚧 In Progress |
 
+---
 
-\# 📫 Connect
+# 📫 Connect With Me
 
+- 💼 LinkedIn *(Coming Soon)*
+- ✍️ Medium *(Coming Soon)*
+- 💻 GitHub *(Current Repository)*
 
+---
 
-\- LinkedIn
+<div align="center">
 
-\- Medium
+### ⭐ Thanks for visiting my cybersecurity portfolio!
 
-\- GitHub
+*More enterprise security projects are continuously being added.*
 
-
-
-(Links will be added after publication.)
-
-
-
+</div>

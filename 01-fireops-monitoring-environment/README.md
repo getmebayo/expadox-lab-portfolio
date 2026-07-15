@@ -1,158 +1,245 @@
-<div align="center">
+\# FireOps Security Monitoring Environment
 
-# 🛰️ FireOps Security Monitoring Environment
 
-### Enterprise Security Monitoring • SIEM • Detection Engineering • Incident Response
 
-*A security monitoring platform built using **Wazuh**, **OpenSearch**, **Suricata**, **Docker**, and **Tailscale** to simulate enterprise-grade threat detection and response.*
+> An enterprise-style security monitoring lab built with Wazuh, OpenSearch, Suricata, Tailscale, Windows endpoints, Ubuntu servers, and cloud telemetry.
 
----
 
-![Platform](https://img.shields.io/badge/Platform-Wazuh-blue)
-![SIEM](https://img.shields.io/badge/SIEM-Wazuh-success)
-![IDS](https://img.shields.io/badge/IDS-Suricata-red)
-![Cloud](https://img.shields.io/badge/Cloud-AWS-orange)
-![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
 
-</div>
+\## Project overview
 
----
 
-# 📖 Overview
 
-The **FireOps Security Monitoring Environment** simulates an enterprise security monitoring infrastructure capable of collecting, correlating, and analysing security telemetry from multiple systems.
+The FireOps Security Monitoring Environment was designed to simulate a distributed enterprise security infrastructure consisting of Windows endpoints, Ubuntu monitoring servers, network intrusion detection, and cloud connectivity.
 
-The solution combines endpoint monitoring, intrusion detection, log aggregation and alerting into a single platform capable of detecting malicious activity and supporting incident response.
 
----
 
-# 🎯 Business Scenario
+The project centralises security telemetry in Wazuh, stores and analyses events through OpenSearch, and presents alerts through the Wazuh Dashboard. Tailscale provides encrypted connectivity between the distributed lab components.
 
-A growing organisation required centralised visibility across its infrastructure.
 
-The existing environment lacked:
 
-- ❌ Centralised logging
-- ❌ Endpoint visibility
-- ❌ Network intrusion detection
-- ❌ Cloud activity monitoring
-- ❌ Security alerting
-- ❌ Incident response capability
+Security simulations were used to validate whether the environment could detect:
 
-The FireOps platform was designed to close these visibility gaps by implementing a layered security monitoring architecture.
 
----
 
-# 🏗️ Solution Architecture
+\- SSH brute-force attacks
 
-The monitoring platform consists of four logical layers.
+\- Network reconnaissance and port scanning
+
+\- Privileged command execution
+
+\- Authentication failures
+
+\- Configuration changes
+
+\- Administrative activity
+
+
+
+\## Business scenario
+
+
+
+FireOps required a central security-monitoring capability that could provide visibility across endpoints, servers, network activity, and cloud environments.
+
+
+
+Before implementation, the organisation lacked:
+
+
+
+\- Centralised log collection
+
+\- Real-time detection
+
+\- Cross-system event correlation
+
+\- Automated security alerts
+
+\- Structured incident-response procedures
+
+\- Historical evidence for investigation
+
+
+
+The monitoring environment was created to close these visibility and response gaps.
+
+
+
+\## Architecture
+
+
+
+The environment is organised into four layers:
+
+
+
+## Architecture
+
+The monitoring environment consists of four logical layers.
 
 | Layer | Components |
-|--------|------------|
+|-------|------------|
 | **Log Sources** | Windows Endpoints, Ubuntu Servers, AWS CloudTrail, Suricata |
-| **Collection & Detection** | Wazuh Agents, Wazuh Manager, Detection Rules |
-| **Storage & Analytics** | OpenSearch |
-| **Visualisation & Response** | Wazuh Dashboard, Email Alerts, Incident Response |
+| **Collection & Detection** | Wazuh Agents, Wazuh Manager, Wazuh Rules Engine, Custom Rules |
+| **Storage & Analysis** | OpenSearch, Centralised Log Indexing, Historical Search |
+| **Visualisation & Response** | Wazuh Dashboard, Security Alerts, Email Notifications, Incident Response |
+
+
 
 ```mermaid
 flowchart TD
+    A[Windows Endpoints]
+    B[Ubuntu Servers]
+    C[AWS CloudTrail]
+    D[Network Traffic]
 
-A[Windows Endpoints]
-B[Ubuntu Servers]
-C[AWS CloudTrail]
-D[Suricata IDS]
+    A --> E[Wazuh Agents]
+    B --> E
+    C --> F[Wazuh Manager]
+    D --> G[Suricata IDS]
 
-A --> E[Wazuh Agents]
-B --> E
+    E --> F
+    G --> F
 
-C --> F[Wazuh Manager]
-D --> F
-
-E --> F
-
-F --> G[Custom Detection Rules]
-
-G --> H[OpenSearch]
-
-H --> I[Wazuh Dashboard]
-
-I --> J[Security Alerts]
-
-J --> K[Incident Response]
+    F --> H[Wazuh Rules Engine]
+    H --> I[OpenSearch]
+    I --> J[Wazuh Dashboard]
+    J --> K[Security Alerts]
+    K --> L[Incident Triage and Response]
 ```
 
----
 
-# 🚀 Core Features
 
-✅ Centralised log collection
+\## Technologies used
 
-✅ Endpoint monitoring
 
-✅ Network intrusion detection
-
-✅ Cloud telemetry monitoring
-
-✅ Custom Wazuh detection rules
-
-✅ Security alerting
-
-✅ Incident response workflows
-
-✅ Secure remote connectivity using Tailscale
-
----
-
-# 🛠️ Technology Stack
 
 | Technology | Purpose |
-|------------|---------|
-| Wazuh | SIEM Platform |
-| OpenSearch | Log Storage & Search |
-| Suricata | Network IDS |
-| Docker | Containerisation |
-| Ubuntu | Monitoring Server |
-| Windows | Endpoint Telemetry |
-| AWS CloudTrail | Cloud Monitoring |
-| Tailscale | Secure Connectivity |
-| Hydra | SSH Brute-force Simulation |
-| Nmap | Network Reconnaissance |
 
----
+|---|---|
 
-# 🧪 Attack Simulations
+| Wazuh | Central SIEM, log collection and detection |
 
-## SSH Brute Force
+| OpenSearch | Log storage, indexing and analysis |
+
+| Suricata | Network intrusion detection |
+
+| Tailscale | Encrypted mesh networking |
+
+| Docker | Containerised deployment |
+
+| Ubuntu | Monitoring server platform |
+
+| Windows | Endpoint telemetry source |
+
+| AWS CloudTrail | Cloud activity monitoring |
+
+| Hydra | SSH brute-force simulation |
+
+| Nmap | Network reconnaissance simulation |
+
+
+
+\## Detection rules implemented
+
+
+
+\### SSH brute-force detection
+
+
+
+Detects repeated failed SSH authentication attempts from a source system.
+
+
+
+\*\*Security value:\*\* identifies password guessing and credential attacks before successful compromise.
+
+
+
+\### After-hours login detection
+
+
+
+Detects authentication activity outside the expected operational period.
+
+
+
+\*\*Security value:\*\* highlights suspicious access and possible compromised credentials.
+
+
+
+\### Privileged command execution
+
+
+
+Monitors `sudo`, root commands, and privilege-escalation activity.
+
+
+
+\*\*Security value:\*\* detects abuse of administrative permissions and unauthorised elevation.
+
+
+
+\## Attack simulations
+
+
+
+\### Scenario 1 — SSH brute force
+
+
+
+Hydra was used to generate repeated failed SSH login attempts against the Ubuntu server.
+
+
 
 ```bash
-hydra -l admin -P passwords.txt TARGET_IP ssh
+
+hydra -l admin -P /path/to/passwords.txt TARGET\_IP ssh
+
 ```
 
-**Objective**
 
-Validate authentication monitoring.
 
----
+The generated authentication failures were collected and analysed by Wazuh.
 
-## Network Reconnaissance
+
+
+\### Scenario 2 — Network reconnaissance
+
+
+
+Nmap was used to identify open ports and running services.
+
+
 
 ```bash
-nmap -sS -sV TARGET_IP
+
+nmap -sS -sV TARGET\_IP
+
 ```
 
-**Objective**
 
-Validate network intrusion detection.
 
----
+Suricata inspected the traffic and forwarded relevant alerts to Wazuh.
 
-## Privilege Escalation
 
-Administrative commands using `sudo` were executed to validate privileged activity monitoring.
 
----
+\### Scenario 3 — Privilege escalation
 
-# 🚨 Incident Response Workflow
+
+
+Administrative commands and suspicious `sudo` activity were generated to confirm that privileged operations were logged and detected.
+
+
+
+\## Incident-response workflow
+
+
+
+The project followed a structured incident lifecycle:
+
+
 
 ```mermaid
 flowchart TD
@@ -171,112 +258,165 @@ D --> E
 E --> F
 ```
 
----
 
-# 📈 Project Outcomes
 
-- ✅ Centralised security telemetry
-- ✅ Successful attack detection
-- ✅ Custom detection engineering
-- ✅ Automated alert generation
-- ✅ Incident response procedures
-- ✅ Historical log retention
-- ✅ Enterprise monitoring architecture
+Response procedures were developed for:
 
----
 
-# 💼 Skills Demonstrated
 
-### Security Operations
+\- SSH brute-force attacks
 
-- SIEM Deployment
-- Detection Engineering
-- Threat Monitoring
-- Incident Response
+\- Privilege-escalation attempts
 
-### Infrastructure
+\- Network reconnaissance
 
-- Docker
-- Linux
-- Windows Administration
-- OpenSearch
+\- Suspicious authentication activity
 
-### Detection
 
-- Wazuh Rules
-- Suricata IDS
-- Authentication Monitoring
-- Network Monitoring
 
-### Offensive Validation
+\## Key outcomes
 
-- Hydra
-- Nmap
-- Privilege Escalation Testing
 
----
 
-# 📂 Repository Structure
+\- Centralised endpoint and network telemetry
+
+\- Successful detection of simulated attacks
+
+\- Custom Wazuh detection rules
+
+\- Wazuh dashboard visibility
+
+\- Automated email alerts
+
+\- Structured incident-response playbooks
+
+\- Secure communication between distributed components
+
+\- Historical logs available for investigation
+
+
+
+\## Security skills demonstrated
+
+
+
+\- SIEM deployment and administration
+
+\- Security monitoring
+
+\- Detection engineering
+
+\- Log collection and normalisation
+
+\- Network intrusion detection
+
+\- Threat simulation
+
+\- Incident triage
+
+\- Incident-response planning
+
+\- Security architecture
+
+\- Linux administration
+
+\- Enterprise logging design
+
+
+
+\## Repository structure
+
+
 
 ```text
+
 01-fireops-monitoring-environment/
-│
+
+├── README.md
+
 ├── architecture/
+
 ├── detection-rules/
+
 ├── docs/
+
 ├── evidence/
+
 ├── implementation/
+
 ├── incident-response/
+
 ├── presentations/
+
 ├── reports/
+
 ├── screenshots/
+
 ├── scripts/
+
 ├── suricata/
+
 └── wazuh/
-```
-
----
-
-# 📚 Documentation
-
-Additional documentation is available in:
 
 ```
+
+
+
+\## Documentation
+
+
+
+The complete project article and supporting documentation are stored in:
+
+
+
+```text
+
 docs/
+
 ```
 
----
 
-# ⚠️ Limitations
 
-- Laboratory deployment
-- Limited cloud integrations
-- Controlled attack scenarios
-- Single monitoring environment
+\## Limitations
 
----
 
-# 🔮 Future Enhancements
 
-- Multi-site deployment
-- Additional cloud providers
-- Threat intelligence feeds
-- Automated containment
-- SOAR integration
-- Executive dashboards
-- High availability
-- Role-based access control
+\- The environment was implemented as a lab rather than a production deployment.
 
----
+\- Some integrations used simulated or limited cloud telemetry.
 
-# 🎓 Project Context
+\- Detection accuracy was validated against controlled attack scenarios.
 
-Developed as part of the **Expadox Lab Project-Based Mentorship Program (Cohort 2 – 2026)**.
+\- Production deployment would require formal retention policies, certificate management, hardened access controls, and high availability.
 
----
 
-<div align="center">
 
-**Enterprise Security Monitoring | Detection Engineering | Incident Response**
+\## Future improvements
 
-</div>
+
+
+\- Deploy remote Wazuh agents across additional endpoints
+
+\- Add AWS and Azure production telemetry
+
+\- Implement stronger role-based access control
+
+\- Enforce formal log-retention policies
+
+\- Add automated containment with Fail2Ban or CrowdSec
+
+\- Introduce threat-intelligence enrichment
+
+\- Build executive and technical dashboards
+
+\- Add detection validation through repeatable test scripts
+
+
+
+\## Project context
+
+
+
+Completed during the Expadox Lab Project-Based Mentorship Program, Cohort 2, 2026.
+

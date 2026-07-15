@@ -153,8 +153,8 @@ This portfolio demonstrates practical implementation of:
 
 # 📫 Connect With Me
 
-- 💼 LinkedIn *(Coming Soon)*
-- ✍️ Medium *(Coming Soon)*
+- 💼 LinkedIn: https://www.linkedin.com/in/adebayo-soc-analyst/
+- ✍️ Medium: https://medium.com/@gidibayo
 - 💻 GitHub *(Current Repository)*
 
 ---
